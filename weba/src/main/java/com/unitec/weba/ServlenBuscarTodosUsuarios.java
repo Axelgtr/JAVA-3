@@ -44,5 +44,8 @@ public class ServlenBuscarTodosUsuarios extends HttpServlet {
         out.println(mapper.writeValueAssString(usuarios));
         
     }catch(Exception ex)
+    {
+    }
+    
     
     }}
