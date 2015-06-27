@@ -26,8 +26,8 @@ public class TestOjos {
             
             Usuario u =new Usuario();
                 u.setEmail("ax@gmail.com");
-                u.setNombre("Mariana C");
-                u.setLogin("mariana");
+                u.setNombre("axel");
+                u.setLogin("axel");
                 u.setPassword("123456");
                 
                 DAOUsuario daou = new DAOUsuario();
@@ -40,7 +40,7 @@ public class TestOjos {
                  
               
               //________________________________________________________________
-    /*UPDATE
+    /*
        Usuario u=new Usuario();
        u.setIdUsuario(1);
        u.setLogin("raton");

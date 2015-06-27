@@ -60,7 +60,10 @@ public class DAOUsuario {
     
     //creamos el buscar todos
     public  List<Usuario> buscarTodos () throws Exception{
-        return null;
+        
+        abrirSesion();
+        List<Usuario> usuarios = session.createCriteria(Usuario.class).list();
+        return usuarios;
     }
     
     
@@ -76,5 +79,9 @@ public class DAOUsuario {
     public boolean autenticar (Usuario u)throws Exception{
         
         return false;
+    }
+
+    private void abrirSesion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
