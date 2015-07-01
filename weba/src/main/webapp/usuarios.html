@@ -16,7 +16,7 @@ and open the template in the editor.
                
                $("#botonUsuario").click(function(){
                    $.getJSON("http://localhost:8084/weba/usuarios", function (datos){
-                       alert("Total de usuarios: "+datos.length+" el primero se llama: " datos[0].nombre);;
+                       alert("Total de usuarios: "+datos.length+" el primero se llama: "+ datos[0].nombre);;
                    
              });
           });
