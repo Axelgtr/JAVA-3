@@ -8,8 +8,8 @@ package com.unitec.weba;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,34 +18,24 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author T-107
  */
-@WebServlet(name = "ServlenBuscarTodosUsuarios", urlPatterns = {"/usuarios"})
 public class ServlenBuscarTodosUsuarios extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-   //Vamos a crear un objeto que nos servira para mapear un arraylist de java a un objeto JSON
-    
-    ObjetMapper mapper new ObjectMapper();
-    DAOUsuario du = new DAOUsuario();
-    try{
-        List<Usuario> usuarios = du.buscarTodos();
+        //vamos a crear un objeto que nos servira para mapear una array list de java a un objeto JSON
         
-        out.println(mapper.writeValueAssString(usuarios));
+        ObjectMapper mapper=new ObjectMapper();
+        DAOUsuario du=new DAOUsuario();
+        try{
+            
+        List<Usuario> usuarios= du.buscarTodos();
+        out.println(mapper.writeValueAsString(usuarios));
+        }catch (Exception ex){
+            
+        }
+            
         
-    }catch(Exception ex)
-    {
     }
-    
-    
-    }}
+}
